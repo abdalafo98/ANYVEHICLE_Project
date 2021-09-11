@@ -1,0 +1,78 @@
+.form-login-signup {
+  background-color: rgb(241, 240, 240);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  width: 400px;
+  height: 500px;
+  margin: 40px auto;
+}
+.form-login-signup form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-login-signup form input {
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 5px;
+  font-size: 16px;
+  margin: auto;
+  border: 1px solid rgba(80, 80, 80, 0.432);
+  width: 80%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.form-login-signup form button {
+  margin: auto;
+  background-color: rgb(40, 54, 136);
+  padding: 15px 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.form-login-signup form button:hover {
+  cursor: pointer;
+  background-color: rgb(246, 133, 31);
+}
+
+.form-login-signup img {
+  width: 220px;
+  height: 150px;
+  margin: auto;
+}
+
+.form-login-signup form p span {
+  color: #312e2b;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 739px) {
+  .form-login-signup {
+    width: 279px;
+    height: 400px;
+  }
+
+  .form-login-signup img {
+    width: 150px;
+    height: 100px;
+    margin: auto;
+  }
+  .form-login-signup form button {
+    padding: 10px 30px;
+  }
+}
