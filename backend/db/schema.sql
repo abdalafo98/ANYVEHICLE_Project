@@ -23,5 +23,20 @@ CREATE TABLE users(
  PRIMARY KEY (id)
 );
 
+CREATE TABLE maintenances (
+    id INT AUTO_INCREMENT NOT NULL,
+    phone_number VARCHAR(13) NOT NULL,
+    vehicle_type VARCHAR(255) NOT NULL,
+    make VARCHAR(255) NOT NULL,
+    year  VARCHAR(255) NOT NULL,
+    vehicle_id VARCHAR(255) NOT NULL, 
+    problem  TEXT NOT NULL,
+    date_of_service DATE NOT NULL,
+    order_status ENUM("accepted","pending","dismissed") DEFAULT "pending" NOT NULL,
+    user_id INT ,
+    FOREIGN KEY (user_id) references users (id),
+    primary key (id)
+);
+
 INSERT INTO roles (role) VALUES("customer");
 INSERT INTO roles (role) VALUES("admin");

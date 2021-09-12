@@ -34,7 +34,13 @@ const login = (req, res) => {
 
         const token = jwt.sign(payload, secret, option);
 
-        res.status(201).json({ message: "login successfully", token: token });
+        res
+          .status(201)
+          .json({
+            message: "login successfully",
+            token: token,
+            role_id: result[0].role_id,
+          });
         return;
       } else {
         res.json({ message: "your password is correct" });
