@@ -1,11 +1,11 @@
 const jwt = require("jsonwebtoken");
 
-const verifyAdmin = (req, res, next) => {
+const verifyAdmin = async (req, res, next) => {
   try {
-    if (!req.header.authorization)
+    if (!req.headers.authorization)
       res.status(403).json({ message: "forbidden" });
-    const token = req.header.authorization.split(" ")[1];
 
+    const token = req.headers.authorization.split(" ")[1];
     const parsedToken = jwt.verify(token, "Admin");
     req.token = parsedToken;
     next();

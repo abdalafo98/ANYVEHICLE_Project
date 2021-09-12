@@ -1,0 +1,74 @@
+.my-order h2 {
+  background-color: rgb(40, 56, 145);
+  width: 50%;
+  margin: 30px auto 0 auto;
+  color: white;
+}
+.admin {
+  margin-bottom: 70px;
+}
+.admin h2 {
+  background-color: rgb(40, 56, 145);
+  width: 90%;
+  margin: 30px auto 0 auto;
+  color: white;
+}
+table {
+  margin: 40px auto 0 auto;
+  background-color: rgb(243, 243, 243);
+  table-layout: fixed;
+  width: 90%;
+}
+
+thead {
+  border-radius: 100px;
+}
+thead tr {
+  background-color: rgb(40, 56, 145);
+  color: #ffffff;
+  text-align: center;
+}
+th,
+td {
+  padding: 1%;
+  text-align: center;
+  border: 1px solid black;
+  font-size: 90%;
+  table-layout: fixed;
+  font-weight: bold;
+
+  width: 50%;
+}
+
+tbody tr {
+  border-bottom: 10px solid #363535;
+}
+
+tbody tr th select {
+  width: 80%;
+  font-weight: bold;
+  font-size: 100%;
+}
+thead tr th {
+  text-align: center;
+  border: 1px solid black;
+  font-size: 90%;
+  table-layout: fixed;
+  font-weight: bold;
+  width: 50%;
+}
+.chart {
+  background-color: rgb(243, 243, 243);
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: auto;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}

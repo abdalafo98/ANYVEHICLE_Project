@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./myorder.css";
+import "./../admin/admin.css";
 const MyOrder = () => {
   const [result, setResult] = useState([]);
 
   const token = localStorage.getItem("token");
+
+  const heading = [
+    "order id",
+    "date of service",
+    "make",
+    "phone number",
+    "vehicle id",
+    "year",
+    "problem",
+    "order status",
+  ];
 
   useEffect(() => {
     axios
@@ -16,52 +27,44 @@ const MyOrder = () => {
       .then((result) => {
         if (result.status === 200) {
           setResult(result.data);
-          console.log(result);
           return;
         }
       })
       .catch((err) => {});
   }, [result]);
   return (
-    <div className="orders">
-      {result.map((element, index) => {
-        let date_of_service = element.date_of_service.split("T")[0];
-        console.log("year", date_of_service);
-        return (
-          <div key={index} className="order-card">
-            <p>
-              <span>date of service:</span> {date_of_service}
-            </p>
-            <p>
-              {" "}
-              <span>make: </span>
-              {element.make}
-            </p>
-            <p>
-              <span> order status:</span> {element.order_status}
-            </p>
-            <p>
-              <span>phone number: </span>
-              {element.phone_number}
-            </p>
+    <div className="my-order">
+      <h2>My Orders</h2>{" "}
+      <table>
+        <thead>
+          <tr>
+            {heading.map((head) => (
+              <th>{head}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {result &&
+            result.map((element) => {
+              let date_of_service = element.date_of_service.split("T")[0];
 
-            <p>
-              <span>vehicle id:</span>
-              {element.vehicle_id}
-            </p>
-            <p>
-              <span>vehicle type:</span> {element.vehicle_type}
-            </p>
-            <p>
-              <span>year:</span> {element.year}
-            </p>
-            <p>
-              {" "}
-              <span>problem:</span> {element.problem}
-            </p>
-          </div>
-        );
-      })}
+              return (
+                <>
+                  <tr>
+                    <th>{element.id}</th>
+                    <th>{date_of_service}</th>
+                    <th>{element.make}</th>
+                    <th>{element.phone_number}</th>
+                    <th>{element.vehicle_id}</th>
+                    <th>{element.year}</th>
+                    <th>{element.problem}</th>
+                    <th>{element.order_status}</th>
+                  </tr>
+                </>
+              );
+            })}
+        </tbody>
+      </table>
     </div>
   );
 };

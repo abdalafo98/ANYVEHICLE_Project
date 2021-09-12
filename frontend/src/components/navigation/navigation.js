@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 
 const Navigation = () => {
-  const nav = ["Home", "About Us", "Services", "Blog", "Shop", "Contact Us"];
   const [toggleNav, setToggleNav] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -40,6 +39,11 @@ const Navigation = () => {
                 {role_id == 1 ? (
                   <>
                     <li>
+                      <Link to="/" className="links">
+                        Home
+                      </Link>
+                    </li>
+                    <li>
                       <Link to="/request/maintenance" className="links">
                         Request Maintenance
                       </Link>
@@ -53,6 +57,7 @@ const Navigation = () => {
                 ) : (
                   ""
                 )}
+
                 <li
                   onClick={() => {
                     localStorage.clear();

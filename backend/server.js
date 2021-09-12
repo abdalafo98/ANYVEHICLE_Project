@@ -5,6 +5,7 @@ const cors = require("cors");
 const signup = require("./routers/routes/auth/signup");
 const login = require("./routers/routes/auth/login");
 const maintenances = require("./routers/routes/customer");
+const admin = require("./routers/routes/admin");
 
 const app = express();
 //built-in middlewares
@@ -17,6 +18,7 @@ app.use(cors());
 app.use(signup);
 app.use(login);
 app.use(maintenances);
+app.use(admin);
 
 const PORT = 5000;
 app.listen(PORT, () => {

@@ -24,8 +24,9 @@ function Login() {
         if (result.status === 201) {
           localStorage.setItem("token", result.data.token);
           localStorage.setItem("role_id", result.data.role_id);
-
-          history.replace("/");
+          result.data.role_id == 1
+            ? history.replace("/")
+            : history.replace("/admin");
 
           return;
         }
