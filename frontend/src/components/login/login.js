@@ -23,6 +23,8 @@ function Login() {
         console.log(result);
         if (result.status === 201) {
           localStorage.setItem("token", result.data.token);
+          localStorage.setItem("role_id", result.data.role_id);
+
           history.replace("/");
 
           return;
